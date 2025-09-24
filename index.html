@@ -14,8 +14,9 @@
       <label for="category-select">項目を選択:</label>
       <select id="category-select">
         <option value="" selected>選択してください</option>
+        <option value="クイックガイド">クイックガイド</option>       
         <option value="抗菌薬">抗菌薬</option>
-        <option value="βラクタム系薬">βラクタム系薬</option>
+        <option value="β-ラクタム系薬">β-ラクタム系薬</option>
         <option value="ペニシリン系薬">ペニシリン系薬</option>
         <option value="アミノペニシリン系薬">アミノペニシリン系薬</option>
         <option value="セフェム系薬">セフェム系薬</option>
@@ -36,9 +37,12 @@
         <option value="トリアゾール系薬">トリアゾール系薬</option>
         <option value="ポリエン系薬">ポリエン系薬</option>
         <option value="キャンディン系薬">キャンディン系薬</option>
-        <option value="AWaRe分類とは">AWaRe分類とは</option>
-        <option value="DASCとは">DASCとは</option>
-        <option value="ASIとは">ASIとは</option>
+        <option value="ESBL">ESBL</option>
+        <option value="MBL">MBL</option>
+        <option value="DTR">DTR</option>        
+        <option value="AWaRe分類">AWaRe分類</option>
+        <option value="DASC">DASC</option>
+        <option value="ASI">ASI</option>
       </select>
 
       <label for="view-select">ビューを選択:</label>
@@ -57,6 +61,30 @@
     <div id="scrollToTop" style="display: none">
       <img src="#" alt="Top" id="topImage" />
     </div>
+    <!-- index.html に追加 -->
+    <div id="howToUseModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>抗微生物薬リスト・クイックガイド</h2>
+        <p>
+          <ol>
+            <li>
+              「項目を選択」のプルダウンから項目を選びます。<br />
+              項目は抗菌薬の種類だけでなく、用語の説明（AWaRe分類など）も含みます。
+            </li>
+            <li>
+              「ビューを選択」で表示方法を切り替えられます。<br />
+              表形式（テーブルビュー）と詳細形式（縦型ビュー）が選べます。
+            </li>
+            <li>
+              縦型ビューで「詳細を見る」ボタンを押すと、追加の説明が展開されます。<br />
+              （準備中の項目もあります）
+            </li>
+          </ol>
+        </p>
+      </div>
+    </div>
+
     <footer>
       <p>&copy; 2025 抗菌薬リスト</p>
     </footer>
