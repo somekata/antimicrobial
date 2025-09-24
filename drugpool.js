@@ -5,7 +5,7 @@ const antibioticClass = ["βラクタム系薬","キノロン系薬","マクロ�
 const antifungalClass = ["アゾール系薬","キャンディン系薬","ポリエン系薬"];
 const blactums = ["ペニシリン系薬","セフェム系薬","カルバペネム系薬","ペネム系薬","モノバクタム系薬","β-ラクタマーゼ阻害剤配合"];
 const penicillins = ["古典的ペニシリン系薬","アミノペニシリン系薬","ペニシリナーゼ耐性ペニシリン系薬","抗緑膿菌作用のあるペニシリン系薬"];
-const cephems = ["セファロスポリン系薬（第一世代）","セファロスポリン系薬（第二世代）","セファロスポリン系薬（第三世代・抗緑膿菌作用なし）","セファロスポリン系薬（第三世代・抗緑膿菌あり）","セファロスポリン系薬（第四世代）","セファロスポリン系薬（未分類）","セファマイシン系薬","オキサセフェム系薬","セファロスポリン系薬"];
+const cephems = ["セファロスポリン系薬（第一世代）","セファロスポリン系薬（第二世代）","セファロスポリン系薬（第三世代・抗緑膿菌作用なし）","セファロスポリン系薬（第三世代・抗緑膿菌作用あり）","セファロスポリン系薬（第四世代）","セファロスポリン系薬（未分類）","セファマイシン系薬","オキサセフェム系薬","セファロスポリン系薬"];
 const macrolides = ["14員環","15員環"]
 
 const route = ["経口", "筋肉注射", "静脈内注射","その他"];
@@ -180,7 +180,7 @@ const data = [
       aware:[aware[0]]       
     },
   {
-      name: ["セファゾリン"],
+      name: ["セファゾリン","Cefazolin"],
       abbreviation:["CEZ"],
       categories: [class1[0], antibioticClass[0], blactums[1], cephems[0]],
       specifiedCategories: [],
@@ -224,7 +224,7 @@ const data = [
       aware:[aware[1]]    
     },
     {
-      name: ["セフトリアキソン"],
+      name: ["セフトリアキソン","Ceftriaxone"],
       abbreviation:["CTRX"],
       categories: [class1[0], antibioticClass[0], blactums[1], cephems[2]],
       specifiedCategories: [],
@@ -267,7 +267,30 @@ const data = [
       asi:[6],
       aware:[aware[1]]    
     },
+
     {
+      name: ["セフタジジム/アビバクタム","Ceftazidime/Avibactam"],
+      abbreviation:["CAZ/AVI"],
+      categories: [class1[0], antibioticClass[0], blactums[1], [cephems[3],drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]]],
+      specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]],
+      mechanism: mechanism[0],
+      route: [route[2]],
+      spectrum: parseRange("1,5-9,15", spectrumBacteria),
+      detail: [
+        "抗緑膿菌作用のある第三世代セファロスポリン系薬であるセフタジジムに、広範囲のβ-ラクタマーゼを阻害するアビバクタムを配合した薬剤である。",
+        "準備中",
+        "準備中",
+      ],
+      reference:[
+      ],
+      url:[
+        "",
+      ],
+      asc:[],
+      asi:[10],
+      aware:[aware[2]] // Reserve
+    },
+        {
       name: ["フロモキセフ","Flomoxef"],
       abbreviation:["FMOX"],
       categories: [class1[0], antibioticClass[0], blactums[1], cephems[7]],
@@ -289,32 +312,10 @@ const data = [
       asi:[],
       aware:[aware[1]]
     },
-    {
-      name: ["セフタジジム/アビバクタム","Ceftazidime/Avibactam"],
-      abbreviation:["CAZ/AVI"],
-      categories: [class1[0], antibioticClass[0], blactums[1], cephems[3],[drugSpecifiedCategory[0],drugSpecifiedCategory[1]]],
-      specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1]],
-      mechanism: mechanism[0],
-      route: [route[2]],
-      spectrum: parseRange("1,5-9,15", spectrumBacteria),
-      detail: [
-        "抗緑膿菌作用のある第三世代セファロスポリン系薬であるセフタジジムに、広範囲のβ-ラクタマーゼを阻害するアビバクタムを配合した薬剤である。",
-        "準備中",
-        "準備中",
-      ],
-      reference:[
-      ],
-      url:[
-        "",
-      ],
-      asc:[],
-      asi:[10],
-      aware:[aware[2]] // Reserve
-    },
   {
     name: ["セフェピム", "Cefepime"],
     abbreviation: ["CFPM"],
-    categories: [class1[0], antibioticClass[0], blactums[1], cephems[4],[drugSpecifiedCategory[0],drugSpecifiedCategory[1]]],
+    categories: [class1[0], antibioticClass[0], blactums[1], [cephems[4],drugSpecifiedCategory[0],drugSpecifiedCategory[1]]],
     specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1]],
     mechanism: mechanism[0],
     route: [route[2]],
@@ -336,8 +337,8 @@ const data = [
   {
     name: ["タゾバクタム/セフトロザン", "Tazobactam/Ceftolozane"],
     abbreviation: ["TAZ/CTLZ"],
-    categories: [class1[0], antibioticClass[0], blactums[1], cephems[5],[drugSpecifiedCategory[0],drugSpecifiedCategory[3]]],
-    specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1]],
+    categories: [class1[0], antibioticClass[0], blactums[1], [cephems[5],drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]]],
+    specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]],
     mechanism: mechanism[0],
     route: [route[2]],
     spectrum: parseRange("1,3-8,11", spectrumBacteria),
@@ -358,8 +359,8 @@ const data = [
   {
     name: ["セフィデロコル","Cefiderocol"],
     abbreviation:["CFDC"],
-    categories: [class1[0], antibioticClass[0], blactums[1], cephems[5],[drugSpecifiedCategory[0],drugSpecifiedCategory[3]]],
-    specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1]],
+    categories: [class1[0], antibioticClass[0], blactums[1], [cephems[5],drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]]],
+    specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]],
     mechanism: mechanism[0],
     route: [route[2]],
     spectrum: parseRange("5-9,11,15", spectrumBacteria),
@@ -396,8 +397,52 @@ const data = [
         "",
       ],
     asc:[],
-    asi:[12],
+    asi:[10],
     aware:[aware[1]]
+  },
+  {
+    name:["イミペネム/シラスタチン"],
+    abbreviation:["IPM/CS"],
+    categories: [class1[0], antibioticClass[0], blactums[2],[drugSpecifiedCategory[0],drugSpecifiedCategory[1]]],
+    specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1]],
+    mechanism: "細胞壁合成阻害",
+    route: ["静脈内注射"],
+    spectrum: parseRange("0-9,11,13", spectrumBacteria),
+    detail: [
+      "グラム陽性、グラム陰性、嫌気性菌までカバーする広域抗菌薬の代表である。",
+      "準備中",
+      "準備中",
+    ],
+      reference:[
+      ],
+      url:[
+        "",
+      ],
+    asc:[],
+    asi:["未設定"],
+    aware:[aware[1]]
+  },
+    {
+    name:["イミペネム/シラスタチン/レレバクタム"],
+    abbreviation:["IPM/CS/REL"],
+    categories: [class1[0], antibioticClass[0], blactums[2],[drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]]],
+    specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]],
+    mechanism: "細胞壁合成阻害",
+    route: ["静脈内注射"],
+    spectrum: parseRange("0-9,11,13,14", spectrumBacteria),
+    detail: [
+      "イミペネム/シラスタチンにclass Aのβ-ラクタマーゼを阻害するレレバクタムを配合し、メタロ型以外のカルバペネマーゼ産生菌に対しても有効性が期待できる。",
+      "準備中",
+      "準備中",
+    ],
+      reference:[
+      ],
+      url:[
+        "",
+      ],
+    asc:["未設定"],
+    asi:["未設定"],
+    aware:[aware[2]]
   },
   {
     name: ["シプロフロキサシン","Ciprofloxacin"],
@@ -980,8 +1025,10 @@ const categoriesInfo = {
   "カルバペネム系薬": "カルバペネム系薬は、βラクタマーゼに安定であり、最も広域のβラクタム系薬である。広域抗菌薬の代表でもある。",
   "セフェム系薬": `${blactums[1]}は、ペニシリナーゼに安定であり、スペクトルはおおむね${blactums[0]}と${blactums[2]}の中間的な位置づけである。ただし、世代や系統などによってスペクトルの広さが異なる。${parseRange("8", cephems)}、${parseRange("6", cephems)}、${parseRange("7", cephems)}}に分類され、${parseRange("8", cephems)}はさらに、第一世代から第四世代*までに分類される。世代未分類として、${data[9].name[0]}がある。<br>*海外では、抗MRSA薬として第五世代に分けることがある。`,
   "第三世代セファロスポリン系薬": "第三世代セファロスポリン系薬は、比較的スペクトルは広いが、スペクトルがグラム陽性よりの抗緑膿菌作用のない薬剤とグラム陰性菌よりの抗緑膿菌作用のある薬剤に分類される。前者の代表がセフトリアキソン、後者の代表がセフタジジムである。",
+  "特定抗菌薬":"「適正使用のために特に定めた抗菌薬」というニュアンスで用いられるが、明確な定義はない。ただし、一般に、広域抗菌薬、抗MRSA薬を含む。それ以外に、コリスチンやチゲサイクリンのような多剤耐性菌に使用される特殊な抗菌薬を含む。",
   "抗MRSA薬": "メチシリン耐性黄色ブドウ球菌感染症に対する治療薬の総称で、4系統6薬剤が知られている。",
   "広域抗菌薬": "特定抗菌薬の一つで、グラム陽性からグラム陰性まで広く作用する抗菌薬の総称である。一般に、タゾバクタム/ピペラシリン、第四世代セファロスポリン系薬、カルバペネム系薬、フルオロキノロン系薬を指す。",
+  "新薬":"特にグラム陰性の「治療困難な耐性（Difficult to Treat Resistance, DTR）」に対する抗菌薬を指す。便宜上の分類であり、今後変更されうる。",
   "キノロン系薬":"通常はフルオロキノロン系薬を指す。",
   "マクロライド系薬": "マクロライド系薬は、50Sリボソームに結合してタンパク質合成を阻害する抗菌薬である。代表的な薬剤として、エリスロマイシン、クラリスロマイシン、アジスロマイシンがある。",
   "アミノグリコシド系薬": "アミノグリコシド系薬は、30Sリボソームに結合してタンパク質合成を阻害する抗菌薬である。代表的な薬剤として、ゲンタマイシン、アミカシン、ストレプトマイシン、アルベカシンがある。",
