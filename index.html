@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>抗微生物薬リスト</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="top.css" />
+  </head>
+  <body>
+    <h1>抗微生物薬リスト</h1>
+
+    <div class="controls">
+      <label for="category-select">項目を選択:</label>
+      <select id="category-select">
+        <option value="" selected>選択してください</option>
+        <option value="抗菌薬">抗菌薬</option>
+        <option value="βラクタム系薬">βラクタム系薬</option>
+        <option value="ペニシリン系薬">ペニシリン系薬</option>
+        <option value="アミノペニシリン系薬">アミノペニシリン系薬</option>
+        <option value="セフェム系薬">セフェム系薬</option>
+        <option value="カルバペネム系薬">カルバペネム系薬</option>
+        <option value="キノロン系薬">キノロン系薬</option>
+        <option value="マクロライド系薬">マクロライド系薬</option>
+        <option value="アミノグリコシド系薬">アミノグリコシド系薬</option>
+        <option value="テトラサイクリン系薬">テトラサイクリン系薬</option>
+        <option value="グリコペプチド系薬">グリコペチド系薬</option>
+        <option value="オキサゾリジノン系薬">オキサゾリジノン系薬</option>
+        <option value="リポペプチド系薬">リポペプチド系薬</option>
+        <option value="ポリペプチド系薬">ポリペプチド系薬</option>
+        <option value="特定抗菌薬">特定抗菌薬</option>
+        <option value="広域抗菌薬">広域抗菌薬</option>
+        <option value="抗MRSA薬">抗MRSA薬</option>
+        <option value="抗真菌薬">抗真菌薬</option>
+        <option value="トリアゾール系薬">トリアゾール系薬</option>
+        <option value="ポリエン系薬">ポリエン系薬</option>
+        <option value="キャンディン系薬">キャンディン系薬</option>
+        <option value="AWaRe分類とは">AWaRe分類とは</option>
+        <option value="DASCとは">DASCとは</option>
+        <option value="ASIとは">ASIとは</option>
+      </select>
+
+      <label for="view-select">ビューを選択:</label>
+      <select id="view-select">
+        <option value="table">テーブルビュー</option>
+        <option value="vertical">縦型ビュー</option>
+      </select>
+    </div>
+    <p>
+      このデータベースは試行版として作成したものです。誤った情報が含まれる場合があります。
+    </p>
+    <div id="results"></div>
+    <p>version 0.0001 2025-1-23</p>
+    <p>version 0.0002 2025-9-5</p>
+    <div id="scrollToTop" style="display: none">
+      <img src="#" alt="Top" id="topImage" />
+    </div>
+    <footer>
+      <p>&copy; 2025 抗菌薬リスト</p>
+    </footer>
+    <script src="top.js"></script>
+    <script src="drugpool.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
