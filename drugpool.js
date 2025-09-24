@@ -429,7 +429,7 @@ const data = [
     specifiedCategories: [drugSpecifiedCategory[0],drugSpecifiedCategory[1],drugSpecifiedCategory[3]],
     mechanism: "細胞壁合成阻害",
     route: ["静脈内注射"],
-    spectrum: parseRange("0-9,11,13,14", spectrumBacteria),
+    spectrum: parseRange("0-9,11,13,15", spectrumBacteria),
     detail: [
       "イミペネム/シラスタチンにclass Aのβ-ラクタマーゼを阻害するレレバクタムを配合し、メタロ型以外のカルバペネマーゼ産生菌に対しても有効性が期待できる。",
       "準備中",
