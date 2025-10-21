@@ -916,7 +916,7 @@ const data = [
   },
   {
     name: ["イサブコナゾール","Isavuconazole"],
-    abbreviation:["ISBZ"],
+    abbreviation:["ISCZ"],
     categories: ["抗真菌薬", "トリアゾール系薬"],
     specifiedCategories: [],
     mechanism: "エルゴステロール合成阻害",
@@ -925,7 +925,7 @@ const data = [
     detail: [
       "トリアゾール系薬の中では極めてスペクトルが広い",
       "2022年12月23日に深在性真菌症治療薬として製造販売が承認された。",
-      "詳細情報2:準備中",
+      "実際にはイソブコナゾニウム硫酸塩として製剤化されており、プロドラッグである。",
   ],
       reference:[
         "医療用医薬品 : クレセンバ"
